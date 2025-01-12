@@ -12,315 +12,210 @@
 
 
 
-/* ======================= Badges ======================================================================== */
-/* ======================= Badges ======================================================================== */
-/* ======================= Badges ======================================================================== */
+/* ======================= Budgets ======================================================================== */
+/* ======================= Budgets ======================================================================== */
+/* ======================= Budgets ======================================================================== */
 
 
-.badges_panel {
-    padding: 20px;
-    text-align: center;
-    color: #333;
+.budgets_panel {
+  height: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.budgets_panel h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* Set Budget Section */
+.set-budget {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.set-budget h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.budget-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.budget-form input,
+.budget-form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.budget-form input {
+  flex: 1;
+}
+
+.budget-form button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.budget-form button:hover {
+  background-color: #45a049;
+}
+
+.current-budget {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Budget Overview Section */
+.budget-overview {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.budget-overview h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.budget-overview p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.warning {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #dc3545;
+  font-weight: bold;
 }
 
 
-.badges_panel h1 {
-    font-size: 2em;
-    color: #133172cc;
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================= Transactions ======================================================================== */
+/* ======================= Transactions ======================================================================== */
+/* ======================= Transactions ======================================================================== */
+
+
+/* Add Transaction Panel */
+.add-transaction-panel {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.badges_panel p {
-    font-size: 13px;
-    color: #777;
-    width: 80%;
-    margin: 0 auto;
+.add-transaction-panel h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
 }
 
-.badge_grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
+/* Transaction Form */
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.badge {
-    cursor: pointer;
-    background: #f0f0f0;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-transaction-panel {
     padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+  }
 
-
-.badge.earned {
-    border: 2px solid #4CAF50;
-}
-
-
-.badge.earned:hover {
-    transform: scale(1.03);
-    border: 2px solid #4CAF50;
-}
-
-.badge.locked {
-    border: 2px solid #ccc;
-    color: #999;
-    z-index: 1;
-}
-
-
-.badge > h3 {
-    font-size: 15px;
-    white-space: normal;
-    margin-top: 10px;
-}
-
-.badge > p {
-    font-weight: 100;
-    white-space: normal;
-}
-
-
-.badge_icon {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #f9a825;
-}
-
-.badge.earned .badge_icon {
-    color: #4CAF50;
-}
-
-.badge.locked .badge_icon {
-    color: #ccc;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ======================= Goals ======================================================================== */
-/* ======================= Goals ======================================================================== */
-/* ======================= Goals ======================================================================== */
-
-.goals_panel {
-    padding: 20px;
-    border-style: dashed;
-    border-width: 1px;
-    border-color: rgba(128, 128, 128, 0.349);
-    border-radius: 10px;
-    margin: auto;
-    text-align: center;
-    background-color: rgba(0, 128, 0, 0);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 100px;
-    padding-top: 80px;
-}
-
-.goals_panel > h1 {
-    font-size: 2rem;
-    color: #333;
-}
-
-.goals_panel > p {
-    font-size: 13px;
-    margin-top: 15px;
-}
-
-.no-goals {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #777;
-}
-
-.no-goals > i {
-    font-size: 50px;
-    color: rgba(128, 128, 128, 0.384);
-}
-
-.no-goals > p {
-    margin-bottom: 15px;
-    margin-top: 5px;
-    font-size: 13px;
-}
-
-.no-goals > button {
-    padding: 12px 25px;
-    background-color: #1f68b1bd;
-    border: none;
+  .form-group input,
+  .form-group select {
     font-size: 12px;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.goal-list {
-    display: grid;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.goal-card {
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-}
-
-.goal-name-header {
-    font-size: 18px;
-    font-weight: 100;
-    margin-bottom: 15px;
-    color: rgba(66, 66, 66, 0.671);
-    text-decoration: underline;
-}
-
-.goal-card.achieved {
-    border: 2px solid #3fe745;
-}
-
-.goal-card.failed {
-    border: 2px solid red;
-}
-
-
-
-.goal-status.achieved {
-    color: #4cbd50e0;
-}
-
-.goal-status.failed {
-    color: red;
-}
-
-
-.goal-actions button {
-    margin-top: 5px;
-    font-size: 12px;
-    padding: 9px 22px;
-    background-color: #3c7cbdbd;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
-.goal-form-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.goal-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-.goal-form > label {
-    width: 100%;
-    text-align: left;
-}
-
-.goal-form h3 {
-    margin-bottom: 10px;
-}
-
-.goal-form select, .goal-form input {
-    width: 100%;
     padding: 8px;
-    margin: 10px 0;
-}
+  }
 
-.goal-form button {
-    margin-top: 10px;
-    margin-right: 8px;
-    padding: 10px 20px;
-    background-color: #254e77bd;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.add-goal-button.disable {
-    background-color: #254e7770;
-    cursor: not-allowed;
-}
-
-.delete-goal-button.disable {
-    background-color: #254e7770;
-    cursor: not-allowed;
-}
-
-.goal-achieved {
-    color: #4CAF50;
-    font-size: 1.2em;
-    animation: bounce 0.5s ease infinite alternate;
-}
-
-@keyframes bounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
-}
-
-
-.achieved-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.achieved-icon {
-    position: absolute;
-    margin: 0;
-}
-
-.achieved-icon > i {
-    font-size: 25px;
-    color: rgb(124, 218, 115);
-}
-
-
-.small-version {
-    margin-top: 5px;
-    margin-left: 2px;
-}
-
-.small-version > i {
-    color: rgb(124, 218, 115);
-    font-size: 18px;
-    border-radius: 50%;
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
 
@@ -340,346 +235,207 @@
 
 
 
-/* ======================= Notifications ==================================================== */
-/* ======================= Notifications ==================================================== */
-/* ======================= Notifications ==================================================== */
 
-.notification_panel {
+
+
+/* ======================= Category ==================================================== */
+/* ======================= Category ==================================================== */
+/* ======================= Category ==================================================== */
+
+.add-category-panel {
     padding: 20px;
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.notification_panel h1 {
-    font-size: 1.8em;
-    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-category-panel h1 {
     margin-bottom: 20px;
-}
-
-.notification_filters {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Category Form */
+  .category-form {
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
-}
-
-.notification_filters button {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    background-color: #1f68b1bd;
-    color: white;
-    cursor: pointer;
-    font-weight: 100;
-}
-
-.notification_filters button:hover {
-    background-color: #18335377;
-}
-
-.notification_filters button.active {
-    background-color: #183453b2;
-}
-
-
-.notification_list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.notification_item {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .category-form input {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
-
-.notification_item.unread {
-    background-color: #eaf6ff;
-}
-
-.notification_item.read {
-    opacity: 0.7;
-}
-
-.notification_type {
-    font-weight: bold;
-    color: #333;
-    margin-right: 10px;
-    text-decoration: underline;
-}
-
-.notification_message {
-    flex-grow: 1;
-    margin: 0;
-    margin-left: 10px;
-    font-size: 13px;
-}
-
-.notification_time {
-    font-size: 0.9em;
-    color: #999;
-    margin-left: 10px;
-}
-
-.mark_as_read {
-    border: none;
-    background-color: transparent;
-    color: #0073e6;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.mark_as_read:hover {
-    text-decoration: underline;
-}
-
-.empty_notifications {
-    color: #666;
-    font-size: 13px;
-    padding: 20px;
-    border-radius: 15px;
-    border: dashed 1px rgba(128, 128, 128, 0.247);
-}
-
-.del-notification {
-    margin: 0;
-    margin-left: 10px;
-}
-
-.del-notification > i {
-    cursor: pointer;
-}
-
-.del-notification > i:hover {
-    color: #0073e665;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ================================ Settings =========================================================== */
-/* ================================ Settings =========================================================== */
-/* ================================ Settings =========================================================== */
-
-.settings_panel {
-    padding: 20px;
-    background-color: #dbdbdb0e;
-    border-radius: 8px;
-    border: dashed 1px rgba(0, 0, 0, 0.205);
-    margin: 0 auto;
-}
-
-.settings_panel h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.settings_section {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.settings_section h2 {
-    margin-bottom: 10px;
-    color: #333;
-    font-size: 1.2em;
-}
-
-.select-theme {
-    width: 90px;
-    cursor: pointer;
-    border: solid 1px;
-    background-color: #0057b300;
-    border-color: rgb(187, 187, 187);
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 5px;
-}
-
-
-.settings_button {
-    display: inline-block;
-    margin: 5px 0;
-    padding: 10px 15px;
-    background-color: #1f68b1bd;
-    font-size: 12px;
-    margin-left: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .category-form input:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  .add-category-btn {
+    padding: 10px 20px;
+    font-size: 14px;
     color: white;
+    background-color: #4caf50;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .add-category-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Existing Categories */
+  .existing-categories {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .existing-categories h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .existing-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .existing-categories li {
+    font-size: 14px;
+    color: #555;
+    padding: 5px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .existing-categories li:last-child {
+    border-bottom: none;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================ Manage accounts =========================================================== */
+/* ================================ Manage accounts =========================================================== */
+/* ================================ Manage accounts =========================================================== */
+
+.account_panel {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    height: 100%;
+    margin: 20px auto;
 }
 
-.settings_button:hover {
+.account_panel h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add_account {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add_account input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.add_account button {
+    padding: 8px 12px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.add_account button:hover {
     background-color: #0056b3;
 }
 
-.settings_button.disable {
-    background-color: #587a9c9f;
-    cursor: not-allowed;
+.accounts_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.settings_button.disable:hover {
-    background-color: #587a9c9f;
-    cursor: not-allowed;
-}
-
-select, input[type="checkbox"] {
-    margin-top: 5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ================================ Help center =========================================================== */
-/* ================================ Help center =========================================================== */
-/* ================================ Help center =========================================================== */
-
-.help-panel {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    padding: 2rem;
-    background-color: #f9f9f993;
-    color: #333;
-    font-family: Arial, sans-serif;
-    margin: 0 auto;
-    border-radius: 8px;
-    border: dashed 1px rgba(128, 128, 128, 0.315);
-}
-
-.help-panel h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #444;
-}
-
-.search-bar {
-    display: flex;
-    margin-bottom: 1.5rem;
-}
-
-.search-bar input {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-}
-
-.search-button {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    background-color: #1f68b1bd;
-    color: white;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-}
-
-.faq-section, .guides-section, .contact-support, .resource-links {
-    margin-bottom: 1.5rem;
-}
-
-.faq-section h2, .guides-section h2, .contact-support h2, .resource-links h2 {
-    font-size: 1.25rem;
-    color: #006fddbd;
-}
-
-.faq-item {
-    cursor: pointer;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-}
-
-.faq-question {
+.account_item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.faq-answer {
-    padding: 0.5rem 0 0.5rem 1rem;
-    color: #666;
+.account_item span {
+    font-size: 1rem;
+    color: #555;
 }
 
-.faq-answer > ul {
-    margin-bottom: 0;
-}
-
-.faq-answer > ul > li {
-    width: 90%;
-    font-size: 14px;
-}
-
-.guides-section ul, .resource-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.guides-section li, .resource-links li {
-    margin: 0.5rem 0;
-}
-
-.guides-section li a, .resource-links li a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.contact-support p {
+.delete_button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     font-size: 0.9rem;
 }
 
+.delete_button:hover {
+    background-color: #a71d2a;
+}
 
 
 
@@ -700,87 +456,125 @@ select, input[type="checkbox"] {
 
 
 
-/* ================================ Contact Form =========================================================== */
-/* ================================ Contact Form =========================================================== */
-/* ================================ Contact Form =========================================================== */
 
-.contact-form {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 8px;
+
+
+
+/* ================================ Generate Reports =========================================================== */
+/* ================================ Generate Reports =========================================================== */
+/* ================================ Generate Reports =========================================================== */
+
+.reports_panel {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.reports_panel h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.filter_section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter_section input[type="date"] {
+    padding: 10px 12px;
+    border: 1px solid #b0b0b0;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 180px;
+    background-color: #f9f9f9;
+}
+
+.filter_section button {
+    padding: 10px 16px;
+    background-color: #1abc9c;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.filter_section button:hover {
+    background-color: #16a085;
+}
+
+.transactions_summary {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.transactions_summary h3 {
+    font-size: 1.75rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.transactions_summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transactions_summary li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+
+.transactions_summary li:last-child {
+    border-bottom: none;
+}
+
+.chart_container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.chart_canvas {
+    max-width: 100%;
+    height: 400px;
     margin: 0 auto;
 }
 
-.contact-form h2 {
-    font-size: 22px;
-    margin-bottom: 30px;
-    color: #333333a4;
-    text-decoration: underline;
-}
-
-.contact-form label {
-    display: block;
-    margin: 0.5rem 0;
-    margin-bottom: 0;
-    margin-top: 10px;
-    font-size: 13px;
-    font-weight: 100;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 0.25rem;
-}
-
-.contact-form textarea {
-    height: 100px;
-}
 
 
-.contact-form button {
-    width: 15%;
-    background-color: #1f68b1bd;
-    font-size: 13px;
-    color: #fff;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-}
 
-.back-button {
-    padding: 0;
-    width: auto !important;
-}
 
-.contact-form .back-button {
-    margin-top: 1rem;
-    background-color: #555;
-}
 
-.contact-form .back-button:hover, .contact-form button:hover {
-    background-color: #0056b3;
-}
 
-.contact-support .contact-form-link {
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-}
 
-.back-button {
-    background-color: rgba(255, 0, 0, 0) !important;
-    color: rgb(100, 100, 100) !important;
-    font-size: 13px;
-    text-decoration: underline;
-    padding: 0 !important;
-    margin-top: 20px !important;
-    margin-left: 10px !important;
-}
+
+
+
+
+
+
+
 
 
 

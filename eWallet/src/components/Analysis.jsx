@@ -7,7 +7,7 @@ import './Analysis.css';
 import Budgets from "./Contents/Budgets";
 import Transactions from "./Contents/Transactions";
 import Categories from "./Contents/Categories";
-import Balance from "./Contents/Balance";
+import Account from "./Contents/Account";
 import Reports from "./Contents/Reports";
 
 
@@ -25,7 +25,7 @@ const PanelState = {
     BUDGETS: 'budgets',
     TRANSACTIONS: 'transactions',
     CATEGORIES: 'categories',
-    BALANCE: 'balance',
+    ACCOUNT: 'account',
     REPORTS: 'reports',
     SIGNOUT: 'signout'
 };
@@ -260,9 +260,9 @@ const handlePanelChange = (newState) => {
     </div>
     <div className="bottom-settings">
         <p 
-            className={`director ${isActive(PanelState.BALANCE)}`} 
-            onClick={() => handlePanelChange(PanelState.BALANCE)}>
-            Update Balance
+            className={`director ${isActive(PanelState.ACCOUNT)}`} 
+            onClick={() => handlePanelChange(PanelState.ACCOUNT)}>
+            Add Account
         </p>
         <p 
             className={`director ${isActive(PanelState.REPORTS)}`} 
@@ -420,7 +420,7 @@ const handlePanelChange = (newState) => {
                     {panelChange === 'budgets' && <Budgets />}
                     {panelChange === 'transactions' && <Transactions />}
                     {panelChange === 'categories' && <Categories />}
-                    {panelChange === 'balance' && <Balance />}
+                    {panelChange === 'account' && <Account />}
                     {panelChange === 'reports' && <Reports />}
                 </div>
             </div>
