@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Allcontent.css';
 
-function Settings({ username, settings }) {
+function Balance({ username, settings }) {
 
     return (
         <div className="settings_panel">
@@ -10,4 +10,4 @@ function Settings({ username, settings }) {
     );
 }
 
-export default Settings;
+export default Balance;

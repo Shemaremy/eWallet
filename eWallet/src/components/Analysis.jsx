@@ -3,15 +3,12 @@ import React, { useState, useEffect } from "react";
 import moment from 'moment';
 import './Analysis.css';
 
-import Badges from "./Contents/Badges";
-import Goals from "./Contents/Goals";
-import Notifications from "./Contents/Notifications";
-import Settings from "./Contents/Settings";
-import Help from "./Contents/Helpcenter";
 
-
-
-
+import Budgets from "./Contents/Budgets";
+import Transactions from "./Contents/Transactions";
+import Categories from "./Contents/Categories";
+import Balance from "./Contents/Balance";
+import Reports from "./Contents/Reports";
 
 
 function Analysis() {
@@ -22,15 +19,16 @@ function Analysis() {
 
 
 
-    const PanelState = {
-        DASHBOARD: 'dashboard',
-        BADGES: 'badges',
-        GOALS: 'goals',
-        NOTIFICATIONS: 'notifications',
-        SETTINGS: 'settings',
-        HELP: 'help',
-        SIGNOUT: 'signout'
-    };
+
+const PanelState = {
+    DASHBOARD: 'dashboard',
+    BUDGETS: 'budgets',
+    TRANSACTIONS: 'transactions',
+    CATEGORIES: 'categories',
+    BALANCE: 'balance',
+    REPORTS: 'reports',
+    SIGNOUT: 'signout'
+};
 
 
 
@@ -238,46 +236,47 @@ const handlePanelChange = (newState) => {
     // Left panel wrapper
     const LeftPanel = (
         <>
-            <div className="basic-options">
-                <p 
-                    className={`director ${isActive(PanelState.DASHBOARD)}`} 
-                    onClick={() => handlePanelChange(PanelState.DASHBOARD)}>
-                    <i className="fa-solid fa-house-chimney"></i>&nbsp;&nbsp; Dashboard
-                </p>
-                <p 
-                    className={`director ${isActive(PanelState.BADGES)}`} 
-                    onClick={() => handlePanelChange(PanelState.BADGES)}>
-                    <i className="fa-solid fa-shield-halved"></i>&nbsp;&nbsp; Your badges
-                </p>
-                <p 
-                    className={`director ${isActive(PanelState.GOALS)}`} 
-                    onClick={() => handlePanelChange(PanelState.GOALS)}>
-                    <i className="fa-solid fa-bullseye"></i>&nbsp;&nbsp; Goals
-                </p>
-                <p 
-                    className={`director ${isActive(PanelState.NOTIFICATIONS)}`} 
-                    onClick={() => handlePanelChange(PanelState.NOTIFICATIONS)}>
-                    <i className="fa-solid fa-bell"></i>&nbsp;&nbsp; Notifications
-                </p>
-            </div>
-            <div className="bottom-settings">
-                <p 
-                    className={`director ${isActive(PanelState.SETTINGS)}`} 
-                    onClick={() => handlePanelChange(PanelState.SETTINGS)}>
-                    <i className="fa-solid fa-gear"></i>&nbsp;&nbsp; Settings
-                </p>
-                <p 
-                    className={`director ${isActive(PanelState.HELP)}`} 
-                    onClick={() => handlePanelChange(PanelState.HELP)}>
-                    <i className="fa-solid fa-headphones-simple"></i>&nbsp;&nbsp; Help center
-                </p>
-                <p 
-                    className={`director signout_director ${isActive(PanelState.SIGNOUT)}`} 
-                    onClick={() => handlePanelChange(PanelState.SIGNOUT)}>
-                    Sign out &nbsp;&nbsp; <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                </p>
-            </div>
-        </>
+    <div className="basic-options">
+        <p 
+            className={`director ${isActive(PanelState.DASHBOARD)}`} 
+            onClick={() => handlePanelChange(PanelState.DASHBOARD)}>
+            Dashboard
+        </p>
+        <p 
+            className={`director ${isActive(PanelState.BUDGETS)}`} 
+            onClick={() => handlePanelChange(PanelState.BUDGETS)}>
+            Set Budget
+        </p>
+        <p 
+            className={`director ${isActive(PanelState.TRANSACTIONS)}`} 
+            onClick={() => handlePanelChange(PanelState.TRANSACTIONS)}>
+            Add Transaction
+        </p>
+        <p 
+            className={`director ${isActive(PanelState.CATEGORIES)}`} 
+            onClick={() => handlePanelChange(PanelState.CATEGORIES)}>
+            Add Category
+        </p>
+    </div>
+    <div className="bottom-settings">
+        <p 
+            className={`director ${isActive(PanelState.BALANCE)}`} 
+            onClick={() => handlePanelChange(PanelState.BALANCE)}>
+            Update Balance
+        </p>
+        <p 
+            className={`director ${isActive(PanelState.REPORTS)}`} 
+            onClick={() => handlePanelChange(PanelState.REPORTS)}>
+            Generate Reports
+        </p>
+        <p 
+            className={`director signout_director ${isActive(PanelState.SIGNOUT)}`} 
+            onClick={() => handlePanelChange(PanelState.SIGNOUT)}>
+            Sign out &nbsp;&nbsp; <i className="fa-solid fa-arrow-right-from-bracket"></i>
+        </p>
+    </div>
+</>
+
     );
 
 
@@ -292,15 +291,42 @@ const handlePanelChange = (newState) => {
             </div>
             <div className="three-panels-section">
                 <div className="first-panel-analysis">
+                    <h4>Balance: $1500</h4>
+                    <p>Bank account: $1000</p>
+                    <p>Mobile Money: $300</p>
+                    <p>Cash: $200</p>
                 </div>
                 <div className="second-panel-analysis">
+                    <h4>Budget status</h4>
+                    <p>Current budget set: $1000</p>
+                    <p>Total expenses: $600</p>
+                    <p>Status: <i className="fa-solid fa-thumbs-up"></i></p>
                 </div>
                 <div className="third-panel-analysis">
+                    <h4>Favourite transactions</h4>
+                    <p>Food: 3 transaction(s)</p>
+                    <p>Clothes: 2 transaction(s)</p>
+                    <p>Movies: 1 transaction(s)</p>
                 </div>
             </div>
-            <div className="github-analysis-panel">
-                <div className="calendar-upper-settings">
-                </div>
+            <div className="recent-transactions">
+                <h4>Recent Transactions</h4>
+                <ul className="transaction-list">
+                    {[
+                        { id: 1, date: "2025-01-10", category: "Food", amount: "$50", account: "Mobile Money" },
+                        { id: 2, date: "2025-01-09", category: "Transport", amount: "$20", account: "Bank Account" },
+                        { id: 3, date: "2025-01-08", category: "Shopping", amount: "$120", account: "Cash" },
+                    ].map((transaction) => (
+                    <li key={transaction.id} className="transaction-item">
+                        <div className="transaction-info">
+                        <span className="transaction-date">{transaction.date}</span>
+                        <span className="transaction-category">{transaction.category}</span>
+                        </div>
+                        <div className="transaction-amount">{transaction.amount}</div>
+                        <div className="transaction-account">{transaction.account}</div>
+                    </li>
+                    ))}
+                </ul>
             </div>
         </>
     );
@@ -391,11 +417,11 @@ const handlePanelChange = (newState) => {
                 </div>
                 <div className="right-wrapper">
                     {panelChange === 'dashboard' && dashboardContent}
-                    {panelChange === 'badges' && <Badges />}
-                    {panelChange === 'goals' && <Goals />}
-                    {panelChange === 'notifications' && <Notifications />}
-                    {panelChange === 'settings' && <Settings />}
-                    {panelChange === 'help' && <Help />}
+                    {panelChange === 'budgets' && <Budgets />}
+                    {panelChange === 'transactions' && <Transactions />}
+                    {panelChange === 'categories' && <Categories />}
+                    {panelChange === 'balance' && <Balance />}
+                    {panelChange === 'reports' && <Reports />}
                 </div>
             </div>
         </div>

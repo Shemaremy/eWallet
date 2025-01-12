@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Allcontent.css";
 
-function Notifications() {
+function Categories() {
 
     return (
         <div className="notification_panel">
@@ -10,4 +10,4 @@ function Notifications() {
     );
 }
 
-export default Notifications;
+export default Categories;

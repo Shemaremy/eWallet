@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import ContactForm from "./ContactForm";
 import './Allcontent.css';
 
-function Help() {
+function Reports() {
 
     return (
         <div className="help-panel">
@@ -11,4 +10,4 @@ function Help() {
     );
 }
 
-export default Help;
+export default Reports;

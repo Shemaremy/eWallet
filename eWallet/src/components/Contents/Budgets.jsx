@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './Allcontent.css';
 
-function Badges({ TotalContributions, calendarData }) {
+function Budgets({ TotalContributions, calendarData }) {
 
     return (
         <div className="badges_panel">
@@ -10,4 +10,4 @@ function Badges({ TotalContributions, calendarData }) {
     );
 }
 
-export default Badges;
+export default Budgets;

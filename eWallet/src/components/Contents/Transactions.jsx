@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import moment from 'moment';
 import './Allcontent.css';
 
-function Goals({username, goal, calendarData}) {
+function Transactions({username, goal, calendarData}) {
 
 
 
@@ -14,4 +14,4 @@ function Goals({username, goal, calendarData}) {
     );
 }
 
-export default Goals;
+export default Transactions;
